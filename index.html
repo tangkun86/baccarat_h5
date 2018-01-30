@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content=""/>
+<meta content="caibaojian" name="author"/>
+<title>百家乐</title>
+<link rel="stylesheet" href="../css/base.css">
+<script type="text/javascript">
+//引入flexible.min.js
+!function(e,t){function n(){var n=l.getBoundingClientRect().width;t=t||540,n>t&&(n=t);var i=100*n/e;r.innerHTML="html{font-size:"+i+"px;}"}var i,d=document,o=window,l=d.documentElement,r=document.createElement("style");if(l.firstElementChild)l.firstElementChild.appendChild(r);else{var a=d.createElement("div");a.appendChild(r),d.write(a.innerHTML),a=null}n(),o.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),"complete"===d.readyState?d.body.style.fontSize="16px":d.addEventListener("DOMContentLoaded",function(e){d.body.style.fontSize="16px"},!1)}(750,750);
+</script>
+</head>
+
+<body>
+	<!-- 正文 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
+	<script type="text/javascript">
+		// The application will create a renderer using WebGL, if possible,
+		// with a fallback to a canvas render. It will also setup the ticker
+		// and the root stage PIXI.Container
+		const app = new PIXI.Application();
+
+		// The application will create a canvas element for you that you
+		// can then insert into the DOM
+		document.body.appendChild(app.view);
+
+		// load the texture we need
+		PIXI.loader.add('bunny', 'bunny.png').load((loader, resources) => {
+		    // This creates a texture from a 'bunny.png' image
+		    const bunny = new PIXI.Sprite(resources.bunny.texture);
+
+		    // Setup the position of the bunny
+		    bunny.x = app.renderer.width / 2;
+		    bunny.y = app.renderer.height / 2;
+
+		    // Rotate around the center
+		    bunny.anchor.x = 0.5;
+		    bunny.anchor.y = 0.5;
+
+		    // Add the bunny to the scene we are building
+		    app.stage.addChild(bunny);
+
+		    // Listen for frame updates
+		    app.ticker.add(() => {
+		         // each frame we spin the bunny around a bit
+		        bunny.rotation += 0.01;
+		    });
+		});
+		
+	</script>
+</body>
+</html>
