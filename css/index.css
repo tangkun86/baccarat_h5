@@ -1,0 +1,313 @@
+html,body{
+	height: 100%;
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+/*背景图片*/
+#container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../img/bg.jpg) no-repeat center center;
+}
+.user {
+	overflow: hidden;
+}
+.user_pic {
+	position: absolute;
+	width: 0.92rem;
+	height: 0.92rem;
+	border-radius: 50%;
+	background: url(../img/avatar_default.jpg) no-repeat center center;
+	background-size: contain;
+}
+.user_txt {
+	position: absolute;
+	width: 1.12rem;
+	height: 0.4rem;
+	font-size: 0.24rem;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+}
+.user_selected {
+	display: none;
+	position: absolute;
+	width: 0.41rem;
+	height: 0.41rem;
+	border-radius: 50%;
+	background: url(../img/tag_right.png) no-repeat center center;
+	background-size: contain;
+	right: -0.2rem;
+	top: 0rem;
+}
+/*中间圆盘*/
+.mid_circle {
+	perspective: 600px;
+	transform-style: preserve-3d;
+	position: relative;
+	left: 1.64rem;
+	top: 3.7rem;
+	width: 4.21rem;
+	height: 4.21rem;
+	border-radius: 50%;
+	background: url(../img/middle_round.png) no-repeat center center;
+	background-size: contain;
+}
+.mid_circle_txt1 {
+	position: absolute;
+	left: 0.98rem;
+	top: 1.38rem;
+	font-size: 0.56rem;
+	font-family: 'YouYuan';
+	color: #ffff32;
+}
+.mid_circle_txt2 {
+	position: absolute;
+	right: 0.98rem;
+	top: 1.38rem;
+	font-size: 0.56rem;
+	font-family: 'YouYuan';
+	color: #ffff32;
+}
+.mid_circle_txt3 {
+	position: absolute;
+	left: 0.54rem;
+	top: 2.3rem;
+	font-size: 0.24rem;
+	font-family: "times new roman";
+	color: #ffff32;
+}
+.mid_circle_txt4 {
+	position: absolute;
+	right: 0.54rem;
+	top: 2.3rem;
+	font-size: 0.24rem;
+	font-family: 'times new roman';
+	color: #ffff32;
+}
+/*扑克牌堆*/
+.pukes {
+	position: absolute;
+	width: 1.14rem;
+	height: 2.4rem;
+	background: url(../img/card_back.png) no-repeat center center;
+	background-size: contain;
+}
+.card {
+	display: none;
+	position: absolute;
+	width: 1.14rem;
+	height: 1.7rem;
+	left: 0;
+	top: 0;
+}
+/*提示槽*/
+.tips {
+	position: relative;
+	left: 1.46rem;
+	top: 4.2rem;
+	width: 4.58rem;
+	height: 0.87rem;
+	background: url(../img/tips_box.png) no-repeat center center;
+	background-size: contain;
+}
+.tips .tips_txt {
+	position: absolute;
+	font-size: 0.38rem;
+	top: 0.14rem;
+	left: 1.9rem;
+	font-weight: bold;
+	letter-spacing: 0.05rem;
+	color: #ffffd9;
+}
+/*选择区域*/
+.choose_area {
+	position: absolute;
+	width: 6.24rem;
+	height: 2.56rem;
+	top: -2.26rem;
+	left: 50%;
+	margin-left: -3.12rem;
+	background: url(../img/bottom_round.png) no-repeat center center;
+	background-size: contain;
+}
+.choose_area .choose_txt1 {
+	position: absolute;
+	left: 1.4rem;
+	top: 1.9rem;
+	width: 0.35rem;
+	height: 0.35rem;
+	background: url(../img/btn_1.png) no-repeat center center;
+	background-size: contain;
+}
+.choose_area .choose_txt2 {
+	position: absolute;
+	width: 0.35rem;
+	height: 0.35rem;
+	left: 2.3rem;
+	top: 1.26rem;
+	background: url(../img/btn_2.png) no-repeat center center;
+	background-size: contain;
+}
+.choose_area .choose_txt3 {
+	position: absolute;
+	width: 0.35rem;
+	height: 0.35rem;
+	left: 3.6rem;
+	top: 1.26rem;
+	background: url(../img/btn_3.png) no-repeat center center;
+	background-size: contain;
+}
+.choose_area .choose_txt4 {
+	position: absolute;
+	width: 0.35rem;
+	height: 0.35rem;
+	left: 4.5rem;
+	top: 1.9rem;
+	background: url(../img/btn_4.png) no-repeat center center;
+	background-size: contain;
+}
+/*底部栏*/
+.bottom {
+	position: absolute;
+	width: 7.5rem;
+	height: 1.42rem;
+	bottom: 0;
+	left: 0;
+	background: url(../img/bottom_bar.png) no-repeat center center;
+	background-size: contain;
+}
+.bottom .money {
+	position: absolute;
+	width: 2rem;
+	height: 0.68rem;
+	left: 0.64rem;
+	top: 0.48rem;
+}
+.bottom .money .money_pic {
+	width: 0.6rem;
+	height: 0.68rem;
+	float: left;
+	margin-right: 0.15rem;
+}
+.bottom .money .money_txt {
+	display: inline-block;
+	margin-top: 0.16rem;
+	font-size: 0.32rem;
+	color: #fef199;
+}
+/*玩家自己*/
+.player_pic {
+	position: absolute;
+	width: 1.11rem;
+	height: 1.11rem;
+	border-radius: 50%;
+	background: url(../img/myHeader.png) no-repeat center center;
+	background-size: contain;
+	left: 50%;
+	margin-left: -0.555rem;
+	top: -0.3rem;
+}
+.player_name {
+	position: absolute;
+	width: 1.12rem;
+	height: 0.4rem;
+	font-size: 0.24rem;
+	text-align: center;
+	color: #fff;
+	left: 50%;
+	margin-left: -0.56rem;
+	top: 0.9rem;
+	overflow: hidden;
+}
+/*筹码*/
+.bottom .clip {
+	display: none;
+	position: absolute;
+	width: 2.8rem;
+	height: 0.68rem;
+	right: 0rem;
+	top: 0.49rem;
+}
+.bottom .clip .clip1 {
+	position: absolute;
+	width: 0.68rem;
+	height: 0.68rem;
+	border-radius: 50%;
+	background: url(../img/chip_1.png) no-repeat center center;
+	background-size: contain;
+}
+.bottom .clip .clip2 {
+	position: absolute;
+	left: 0.9rem;
+	width: 0.68rem;
+	height: 0.68rem;
+	border-radius: 50%;
+	background: url(../img/chip_2.png) no-repeat center center;
+	background-size: contain;
+}
+.bottom .clip .clip3 {
+	position: absolute;
+	left: 1.8rem;
+	width: 0.68rem;
+	height: 0.68rem;
+	border-radius: 50%;
+	background: url(../img/chip_3.png) no-repeat center center;
+	background-size: contain;
+}
+/*选中的筹码*/
+.clip_box {
+	display: none;
+	position: absolute;
+	top: -0.5rem;
+	width: 1.26rem;
+	height: 0.44rem;	
+}
+.clip_box img {
+	position: absolute;
+	width: 0.44rem;
+	height: 0.44rem;
+	border-radius: 50%;
+	z-index: 20;
+}
+.clip_box .clip_txt {
+	position: absolute;
+	height: 0.36rem;
+	left: 0.3rem;
+	top: 0.06rem;
+	text-align: center;
+	font-size: 0.2rem;
+	line-height: 0.3rem;
+	color: #fff;
+	padding: 0 0.12rem;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 16px;
+	border: solid 1px rgba(255, 255, 255, 0.3);
+}
+/*计分板*/
+.board {
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -2.125rem;
+	top: 0.44rem;
+	width: 4.25rem;
+	height: 2.68rem;
+	background: url(../img/board.png) no-repeat center center;
+	background-size: contain;
+	padding-left: 0.14rem;
+	padding-top: 0.1rem;
+}
+.board ul li {
+	float: left;
+	width: 0.8rem;
+	height: 0.56rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #fdfdcf;
+	line-height: 0.56rem;
+	margin-bottom: 0.04rem;
+}

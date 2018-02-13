@@ -2,58 +2,208 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<!-- <meta content="yes" name="apple-mobile-web-app-capable">
 <meta content="black" name="apple-mobile-web-app-status-bar-style">
 <meta content="telephone=no" name="format-detection">
 <meta content="email=no" name="format-detection">
 <meta name="description" content="不超过150个字符"/>
-<meta name="keywords" content=""/>
-<meta content="caibaojian" name="author"/>
+<meta name="keywords" content="百家乐"/>
+<meta content="百家乐" name="author"/> -->
 <title>百家乐</title>
-<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
 <script type="text/javascript">
 //引入flexible.min.js
 !function(e,t){function n(){var n=l.getBoundingClientRect().width;t=t||540,n>t&&(n=t);var i=100*n/e;r.innerHTML="html{font-size:"+i+"px;}"}var i,d=document,o=window,l=d.documentElement,r=document.createElement("style");if(l.firstElementChild)l.firstElementChild.appendChild(r);else{var a=d.createElement("div");a.appendChild(r),d.write(a.innerHTML),a=null}n(),o.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),"complete"===d.readyState?d.body.style.fontSize="16px":d.addEventListener("DOMContentLoaded",function(e){d.body.style.fontSize="16px"},!1)}(750,750);
 </script>
+<!-- <script>
+	(function(designWidth, maxWidth) {
+	var doc = document,
+	win = window,
+	docEl = doc.documentElement,
+	remStyle = document.createElement("style"),
+	tid;
+	function refreshRem() {
+		var width = docEl.getBoundingClientRect().width;
+		maxWidth = maxWidth || 540;
+		width>maxWidth && (width=maxWidth);
+		var rem = width * 100 / designWidth;
+		remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+	}
+	if (docEl.firstElementChild) {
+		docEl.firstElementChild.appendChild(remStyle);
+	} else {
+		var wrap = doc.createElement("div");
+		wrap.appendChild(remStyle);
+		doc.write(wrap.innerHTML);
+		wrap = null;
+	}
+	//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+	refreshRem();
+	win.addEventListener("resize", function() {
+		clearTimeout(tid); //防止执行两次
+		tid = setTimeout(refreshRem, 300);
+	}, false);
+	win.addEventListener("pageshow", function(e) {
+		if (e.persisted) { // 浏览器后退的时候重新计算
+			clearTimeout(tid);
+			tid = setTimeout(refreshRem, 300);
+		}
+	}, false);
+	if (doc.readyState === "complete") {
+		doc.body.style.fontSize = "16px";
+	} else {
+		doc.addEventListener("DOMContentLoaded", function(e) {
+			doc.body.style.fontSize = "16px";
+		}, false);
+	}
+})(750, 750);
+</script> -->
 </head>
 
 <body>
-	<!-- 正文 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
-	<script type="text/javascript">
-		// The application will create a renderer using WebGL, if possible,
-		// with a fallback to a canvas render. It will also setup the ticker
-		// and the root stage PIXI.Container
-		const app = new PIXI.Application();
-
-		// The application will create a canvas element for you that you
-		// can then insert into the DOM
-		document.body.appendChild(app.view);
-
-		// load the texture we need
-		PIXI.loader.add('bunny', 'bunny.png').load((loader, resources) => {
-		    // This creates a texture from a 'bunny.png' image
-		    const bunny = new PIXI.Sprite(resources.bunny.texture);
-
-		    // Setup the position of the bunny
-		    bunny.x = app.renderer.width / 2;
-		    bunny.y = app.renderer.height / 2;
-
-		    // Rotate around the center
-		    bunny.anchor.x = 0.5;
-		    bunny.anchor.y = 0.5;
-
-		    // Add the bunny to the scene we are building
-		    app.stage.addChild(bunny);
-
-		    // Listen for frame updates
-		    app.ticker.add(() => {
-		         // each frame we spin the bunny around a bit
-		        bunny.rotation += 0.01;
-		    });
-		});
+	<div id="container">
+		<!--用户列表-->
+		<div class="user_pic" data-index = "0">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "0">等待加入</p>
 		
-	</script>
+		<div class="user_pic" data-index = "1">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "1">等待加入</p>
+		
+		<div class="user_pic" data-index = "2">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "2">等待加入</p>
+		
+		<div class="user_pic" data-index = "3">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "3">等待加入</p>
+		
+		<div class="user_pic" data-index = "4">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "4">等待加入</p>
+		
+		<div class="user_pic" data-index = "5">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "5">等待加入</p>
+		
+		<div class="user_pic" data-index = "6">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "6">等待加入</p>
+		
+		<div class="user_pic" data-index = "7">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "7">等待加入</p>
+		
+		<div class="user_pic" data-index = "8">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "8">等待加入</p>
+		
+		<div class="user_pic" data-index = "9">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "9">等待加入</p>
+		
+		<div class="user_pic" data-index = "10">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "10">等待加入</p>
+		
+		<div class="user_pic" data-index = "11">
+			<div class="user_selected"></div>
+		</div>
+		<p class="user_txt" data-index = "11">等待加入</p>
+		<!--中间圆盘-->
+		<section class="mid_circle">
+			<span class="mid_circle_txt1">庄</span>
+			<span class="mid_circle_txt2">闲</span>
+			<span class="mid_circle_txt3">BANKER</span>
+			<span class="mid_circle_txt4">PLAYER</span>
+		</section>
+		<!--提示槽-->
+		<section class="tips">
+			<p class="tips_txt">等待</p>
+		</section>
+		
+		<!--底部栏-->
+		<section class="bottom">
+			<!--半圆区域-->
+			<section class="choose_area">
+				<span class="choose_txt1 choose_txt" data-which="庄"></span>
+				<span class="choose_txt2 choose_txt" data-which="和"></span>
+				<span class="choose_txt3 choose_txt" data-which="对"></span>
+				<span class="choose_txt4 choose_txt" data-which="闲"></span>
+			</section>
+			<div class="money">
+				<img src="img/coins.png" class="money_pic" />
+				<span class="money_txt">200000</span>
+			</div>
+			<!--玩家自己-->
+			<div class="player_pic"></div>
+			<p class="player_name">小丸子</p>
+			<!--筹码-->
+			<div class="clip">
+				<div class="clip1 clip_ball" data-type="0" data-money="10">
+					<div class="clip_box">
+						<img src="img/chip_1.png" />
+						<span class="clip_txt">10</span>
+					</div>
+				</div>
+				<div class="clip2 clip_ball" data-type="1" data-money="100">
+					<div class="clip_box">
+						<img src="img/chip_2.png" />
+						<span class="clip_txt">100</span>
+					</div>
+				</div>
+				<div class="clip3 clip_ball" data-type="2" data-money="1000">
+					<div class="clip_box">
+						<img src="img/chip_3.png" />
+						<span class="clip_txt">1000</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--计分板-->
+		<section class="board">
+			<ul>
+				<li>牌例</li>
+				<li>庄</li>
+				<li>闲</li>
+				<li>和</li>
+				<li>对</li>
+				<li>赔率</li>
+				<li>1.9</li>
+				<li>2</li>
+				<li>8</li>
+				<li>16</li>
+				<li>投注</li>
+				<li>100</li>
+				<li>0</li>
+				<li>20</li>
+				<li>10</li>
+				<li>结算</li>
+				<li>190</li>
+				<li>0</li>
+				<li>0</li>
+				<li>0</li>
+			</ul>
+		</section>
+	</div>
+
+	<!--js文件-->
+	<!--<script src="/socket.io/socket.io.js"></script>-->
+	<script type="text/javascript" src="lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>
