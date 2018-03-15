@@ -3,21 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-<!-- <meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-mobile-web-app-capable">
 <meta content="black" name="apple-mobile-web-app-status-bar-style">
 <meta content="telephone=no" name="format-detection">
 <meta content="email=no" name="format-detection">
 <meta name="description" content="不超过150个字符"/>
 <meta name="keywords" content="百家乐"/>
-<meta content="百家乐" name="author"/> -->
+<meta content="百家乐" name="author"/>
+<!-- UC强制全屏 --> 
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
 <title>百家乐</title>
-<link rel="stylesheet" type="text/css" href="css/base.css"/>
-<link rel="stylesheet" type="text/css" href="css/index.css"/>
-<script type="text/javascript">
+<link rel="stylesheet" type="text/css" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" href="./css/index.css"/>
+<!-- <script type="text/javascript">
 //引入flexible.min.js
 !function(e,t){function n(){var n=l.getBoundingClientRect().width;t=t||540,n>t&&(n=t);var i=100*n/e;r.innerHTML="html{font-size:"+i+"px;}"}var i,d=document,o=window,l=d.documentElement,r=document.createElement("style");if(l.firstElementChild)l.firstElementChild.appendChild(r);else{var a=d.createElement("div");a.appendChild(r),d.write(a.innerHTML),a=null}n(),o.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),"complete"===d.readyState?d.body.style.fontSize="16px":d.addEventListener("DOMContentLoaded",function(e){d.body.style.fontSize="16px"},!1)}(750,750);
-</script>
-<!-- <script>
+</script> -->
+<script>
 	(function(designWidth, maxWidth) {
 	var doc = document,
 	win = window,
@@ -59,7 +63,7 @@
 		}, false);
 	}
 })(750, 750);
-</script> -->
+</script>
 </head>
 
 <body>
@@ -144,6 +148,22 @@
 				<span class="choose_txt2 choose_txt" data-which="和"></span>
 				<span class="choose_txt3 choose_txt" data-which="对"></span>
 				<span class="choose_txt4 choose_txt" data-which="闲"></span>
+				<div class="clip_box clip_box1">
+					<img src="img/chip_origin.png" />
+					<span class="clip_txt">0</span>
+				</div>
+				<div class="clip_box clip_box2">
+					<img src="img/chip_origin.png" />
+					<span class="clip_txt">0</span>
+				</div>
+				<div class="clip_box clip_box3">
+					<img src="img/chip_origin.png" />
+					<span class="clip_txt">0</span>
+				</div>
+				<div class="clip_box clip_box4">
+					<img src="img/chip_origin.png" />
+					<span class="clip_txt">0</span>
+				</div>
 			</section>
 			<div class="money">
 				<img src="img/coins.png" class="money_pic" />
@@ -154,24 +174,9 @@
 			<p class="player_name">小丸子</p>
 			<!--筹码-->
 			<div class="clip">
-				<div class="clip1 clip_ball" data-type="0" data-money="10">
-					<div class="clip_box">
-						<img src="img/chip_1.png" />
-						<span class="clip_txt">10</span>
-					</div>
-				</div>
-				<div class="clip2 clip_ball" data-type="1" data-money="100">
-					<div class="clip_box">
-						<img src="img/chip_2.png" />
-						<span class="clip_txt">100</span>
-					</div>
-				</div>
-				<div class="clip3 clip_ball" data-type="2" data-money="1000">
-					<div class="clip_box">
-						<img src="img/chip_3.png" />
-						<span class="clip_txt">1000</span>
-					</div>
-				</div>
+				<div class="clip1 clip_ball" data-type="0" data-money="10"></div>
+				<div class="clip2 clip_ball" data-type="1" data-money="100"></div>
+				<div class="clip3 clip_ball" data-type="2" data-money="1000"></div>
 			</div>
 		</section>
 		<!--计分板-->
@@ -183,27 +188,48 @@
 				<li>和</li>
 				<li>对</li>
 				<li>赔率</li>
-				<li>1.9</li>
+				<li>2</li>
 				<li>2</li>
 				<li>8</li>
 				<li>16</li>
 				<li>投注</li>
-				<li>100</li>
-				<li>0</li>
-				<li>20</li>
-				<li>10</li>
+				<li class="banker_use">0</li>
+				<li class="player_use">0</li>
+				<li class="equal_use">0</li>
+				<li class="two_use">0</li>
 				<li>结算</li>
-				<li>190</li>
-				<li>0</li>
-				<li>0</li>
-				<li>0</li>
+				<li class="banker_change">0</li>
+				<li class="player_change">0</li>
+				<li class="equal_change">0</li>
+				<li class="two_change">0</li>
 			</ul>
 		</section>
 	</div>
-
+	<!-- 胜利的动画 -->
+	<!-- <img class="vectory" src="img/胜利.gif" alt="胜利动画"> -->
+	<!-- 失败的动画 -->
+	<!-- <img class="defeat" src="img/失败.gif" alt="失败动画"> -->
+	<!-- 结算面板 -->
+	<div class="account_board">
+		<div class="account_title">
+			<span>姓名</span>
+			<span>本金</span>
+			<span>中注赔率</span>
+			<span>盈亏</span>		
+		</div>
+		<div class="account_content">
+			<span>小丸子</span>
+			<span class="total">20000</span>
+			<span class="odds">2</span>
+			<span class="change">+200</span>
+		</div>
+		<div class="continue">点击继续</div>		
+	</div>
+	<!-- 遮罩 -->
+	<div class="mask"></div>
 	<!--js文件-->
 	<!--<script src="/socket.io/socket.io.js"></script>-->
-	<script type="text/javascript" src="lib/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript" src="./lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/game.js"></script>
 </body>
 </html>

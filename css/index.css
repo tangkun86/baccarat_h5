@@ -237,7 +237,7 @@ body{
 	width: 0.68rem;
 	height: 0.68rem;
 	border-radius: 50%;
-	background: url(../img/chip_1.png) no-repeat center center;
+	background: url(../img/chip_0.png) no-repeat center center;
 	background-size: contain;
 }
 .bottom .clip .clip2 {
@@ -246,7 +246,7 @@ body{
 	width: 0.68rem;
 	height: 0.68rem;
 	border-radius: 50%;
-	background: url(../img/chip_2.png) no-repeat center center;
+	background: url(../img/chip_1.png) no-repeat center center;
 	background-size: contain;
 }
 .bottom .clip .clip3 {
@@ -255,14 +255,15 @@ body{
 	width: 0.68rem;
 	height: 0.68rem;
 	border-radius: 50%;
-	background: url(../img/chip_3.png) no-repeat center center;
+	background: url(../img/chip_2.png) no-repeat center center;
 	background-size: contain;
 }
 /*选中的筹码*/
 .clip_box {
-	display: none;
+	/*display: none;*/
 	position: absolute;
-	top: -0.5rem;
+	top: 0rem;
+	left: 0rem;
 	width: 1.26rem;
 	height: 0.44rem;	
 }
@@ -287,6 +288,22 @@ body{
 	border-radius: 16px;
 	border: solid 1px rgba(255, 255, 255, 0.3);
 }
+.clip_box1 {
+	left: 0.2rem;
+	top: 1.5rem;
+}
+.clip_box2 {
+	left: 1.9rem;
+	top: 0.2rem;
+}
+.clip_box3 {
+	left: 3.8rem;
+	top: 0.2rem;
+}
+.clip_box4 {
+	left: 5.4rem;
+	top: 1.5rem;
+}
 /*计分板*/
 .board {
 	display: none;
@@ -310,4 +327,99 @@ body{
 	color: #fdfdcf;
 	line-height: 0.56rem;
 	margin-bottom: 0.04rem;
+}
+/*胜利动画*/
+.vectory {
+	display: none;
+	width: 7rem;
+	height: 7rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -3.5rem;
+	margin-top: -3.5rem;
+}
+.defeat {
+	display: none;
+	width: 7rem;
+	height: 7rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -3.5rem;
+	margin-top: -3.5rem;
+}
+/*结算面板*/
+.account_board {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 2.4rem;
+	margin-left: -2.65rem;
+	width: 5.30rem;
+	height: 5.76rem;
+	padding: 1.8rem 0.4rem 0;
+	background: url(../img/board_total.png) no-repeat center center;
+	background-size: 6.49rem 7.06rem; 
+	z-index: 30;
+}
+.account_board .account_title {
+	height: 0.74rem;
+	line-height: 0.74rem;
+	border-bottom: 0.02rem solid #000;
+	/*border-image: url(../img/title_border.png) repeat;*/
+}
+.account_board .account_title span {
+	float: left;
+	text-align: center;
+	min-width: 1.07rem;
+	color: #fdfdcf;
+	font-size: 0.26rem;
+}
+.account_board .account_title span:nth-child(4) {
+	margin-right: 0;
+}
+.account_board .account_content {
+	height: 0.74rem;
+	line-height: 0.74rem;
+	border-bottom: 0.02rem solid #5d5b4f;
+}
+.account_board .account_content span {
+	float: left;
+	width: 1.07rem;
+	text-align: center;
+  color: #fdfdcf;
+  font-size: 0.24rem;
+  color: #fff;
+}
+#change {
+	color: red;
+}
+/*遮罩*/
+.mask {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+}
+/*继续游戏*/
+.continue {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -0.5rem;
+	color: #fff;
+	font-size: 0.2rem;
+	animation: Twinkle 0.3s infinite ease-in-out;
+}
+/*定义闪烁动画*/
+@keyframes Twinkle {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
